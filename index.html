@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM Construction Company Ltd</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+        scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 40, 80, 0.6), rgba(0, 40, 80, 0.6)), 
+            url('hero-construction.jpg') center/cover no-repeat;
+            position: relative;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: rgba(0, 20, 40, 0.5);
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+
+        .social-icons a:hover {
+            color: #f9a825;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 60px;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-img {
+            width: 250px;
+            height: auto;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f9a825;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #f9a825;
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .hero-content h2 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 {
+            font-size: 62px;
+            font-weight: 620;
+            
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 .highlight {
+            color: #f9a825;
+        }
+
+        .cta-button {
+            background: #f9a825;
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        .cta-button:hover {
+            background: #fbb13c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(249, 168, 37, 0.4);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 5%;
+            background: #ffffff;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            width: 100%;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .projects-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -20px;
+            background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
+            padding: 35px 45px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(255, 152, 0, 0.3);
+        }
+
+        .projects-badge h3 {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .projects-badge p {
+            font-size: 13px;
+            font-weight: 500;
+            color: white;
+            margin: 8px 0 0 0;
+            letter-spacing: 0.5px;
+        }
+
+        .about-content {
+            width: 100%;
+        }
+
+        .section-subtitle {
+            color: #f9a825;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #64748b;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+                font-size: 12px;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo-img {
+                width: 200px;
+            }
+
+            .logo-text {
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: rgba(0, 20, 40, 0.98);
+                transition: right 0.3s ease;
+                z-index: 999;
+                padding-top: 80px;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+            }
+
+            nav ul li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            nav a {
+                display: block;
+                padding: 20px 0;
+                font-size: 16px;
+            }
+
+            .hero-content h2 {
+                font-size: 16px;
+                letter-spacing: 4px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+                letter-spacing: 2px;
+            }
+
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 14px;
+            }
+
+            .about-section {
+                padding: 60px 20px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image img {
+                height: 300px;
+            }
+
+            .projects-badge {
+                bottom: -15px;
+                right: -15px;
+                padding: 25px 35px;
+            }
+
+            .projects-badge h3 {
+                font-size: 38px;
+            }
+
+            .projects-badge p {
+                font-size: 11px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .about-text {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .about-section {
+                padding: 70px 30px;
+                margin-top: 10px;
+            }
+
+            .section-title {
+                font-size: 25px;
+            }
+
+            .top-bar {
+                padding: 12px 40px;
+            }
+
+            header {
+                padding: 25px 40px;
+            }
+
+            .logo-img {
+                width: 220px;
+            }
+
+            .logo-text {
+                font-size: 16px;
+            }
+
+            nav ul {
+                gap: 35px;
+            }
+
+            nav a {
+                font-size: 15px;
+            }
+
+            .hero-content h2 {
+                font-size: 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 56px;
+            }
+        
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .services-header .section-subtitle {
+            color: #f9a825;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .services-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .services-header p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #64748b;
+        }
+
+        .services-carousel {
+            position: relative;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            margin: 0 60px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card {
+            min-width: calc(33.333% - 20px);
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(249, 168, 37, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .service-icon .material-icons {
+            font-size: 36px;
+            color: #f9a825;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #64748b;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .service-card a {
+            color: #f9a825;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .service-card a:hover {
+            color: #ff9800;
+        }
+
+        .service-card a .material-icons {
+            font-size: 16px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 1px solid #e2e8f0;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background: #f8f9fa;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-button.prev {
+            left: 0;
+        }
+
+        .carousel-button.next {
+            right: 0;
+        }
+
+        .carousel-button .material-icons {
+            font-size: 28px;
+            color: #1e293b;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #f9a825;
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        .carousel-dot:hover {
+            background: rgba(249, 168, 37, 0.7);
+        }
+
+        /* Services Responsive */
+        @media (max-width: 768px) {
+            .services-section {
+                padding-top: 60px;
+            }
+
+            .services-header {
+                margin-bottom: 40px;
+            }
+
+            .services-header h2 {
+                font-size: 28px;
+            }
+
+            .services-header p {
+                font-size: 14px;
+            }
+
+            .carousel-wrapper {
+                margin: 0 50px;
+            }
+
+            .service-card {
+                min-width: 100%;
+            }
+
+            .carousel-button {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .services-section {
+                padding: 80px 40px;
+            }
+
+            .services-header h2 {
+                font-size: 36px;
+            }
+
+            .service-card {
+                min-width: calc(50% - 15px);
+            }
+        }
+    
+/* footer Section styles *************************************************************************************/
+
+        .euler-footer {
+            background-color: #000000;
+            color: #f9a825;
+            padding: 80px 0 20px;
+        }
+
+        .euler-footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .euler-footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .euler-footer-section h3 {
+            
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .euler-footer-company-info {
+            max-width: 280px;
+        }
+
+        .euler-footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .euler-footer-logo img {
+            width: 220px;
+            
+
+            border-radius: 5px;
+            
+        }
+
+        .euler-footer-logo-text h2 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .euler-footer-logo-text p {
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        .euler-footer-description {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .euler-footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .euler-footer-social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f9a825;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .euler-footer-social-links a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .euler-footer-contact-info .euler-footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .euler-footer-contact-info .euler-footer-contact-item i {
+            color: var(--primary-color);
+            width: 20px;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+
+        .euler-footer-contact-info .euler-footer-contact-item div {
+            color: #cccccc;
+        }
+
+        .euler-footer-services-list {
+            list-style: none;
+        }
+
+        .euler-footer-services-list li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .euler-footer-services-list li a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .euler-footer-services-list li a:hover {
+            color: var(--primary-color);
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item i {
+            color: var(--primary-color);
+            width: 20px;
+            margin-right: 15px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item div {
+            color: #cccccc;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item .euler-footer-day {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item .euler-footer-time {
+            font-size: 14px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item.euler-footer-closed .euler-footer-time {
+            color: #f9a825;
+            font-weight: 600;
+        }
+
+        .euler-footer-bottom {
+            border-top: 1px solid #404040;
+            padding-top: 20px;
+            text-align: center;
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .euler-footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .euler-footer-company-info {
+                max-width: 100%;
+            }
+
+            .euler-footer-container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 992px) and (min-width: 769px) {
+            .euler-footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* Past Clients Styles */
+.client-section {
+    background-color: var(--white);
+    padding: 60px 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.client-heading {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.client-heading h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.client-heading p {
+    font-size: 16px;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.logo-carousel {
+    position: relative;
+    padding: 0px 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.logo-container {
+    display: flex;
+    animation: scroll 37s linear infinite;
+    width: fit-content;
+}
+
+.logo-container:hover {
+    animation-play-state: paused;
+}
+
+.client-logo {
+    flex: 0 0 auto;
+    height: 80px;
+    width: 180px;
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+}
+
+
+
+.client-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="top-bar">
+            <div class="social-icons">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +260 773519652</span>
+                <span><i class="fas fa-envelope"></i> info@abmconltd.com</span>
+                <span><i class="fas fa-clock"></i> Mon-Fri: 8:00 - 17:00</span>
+            </div>
+        </div>
+        <hr>
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="ABM Construction Logo" class="logo-img">
+ 
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/index.html" onclick="closeMenu()">Home</a></li>
+                    <li><a href="/#about" onclick="closeMenu()">About us</a></li>
+                    <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                    <li><a href="/projects.html" onclick="closeMenu()">Projects</a></li>
+                    <li><a href="/contact-us.html" onclick="closeMenu()">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="hero-content">
+            <h2>Welcome to ABM Construction</h2>
+            <h1>MAKING <span class="highlight">DREAMS</span> REALITY</h1>
+            <button onclick="location.href='/contact-us.html'" class="cta-button">Contact Us</button>
+        </div>
+    </div>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="about-us.jpg" alt="Construction Site">
+                <div class="projects-badge">
+                    <h3>20+</h3>
+                    <p>Completed Projects</p>
+                </div>
+            </div>
+            <div class="about-content">
+                <h4 class="section-subtitle">ABOUT A.B.M</h4>
+                <h2 class="section-title">Building the Future on a Foundation of Excellence</h2>
+                <p class="about-text">
+                    A.B.M Construction is private construction company established in 2021. Our core business is building construction and general construction works. Our aim is to provide professional construction services to our clients by creating a successful partnership with them throughout.
+                </p>
+                <p class="about-text">
+                    Our pledge is to establish lasting relationships with our clients by exceeding their expectations and gaining their trust through exceptional performance by every project.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="services-container">
+            <div class="services-header">
+                <span class="section-subtitle">Our Services</span>
+                <h2>Expertise in Every Phase of Construction</h2>
+                <p>
+                    We offer a comprehensive range of construction services, tailored to meet the unique needs of each client. From initial planning to final execution, our team is dedicated to delivering superior results.
+                </p>
+            </div>
+
+            <div class="services-carousel">
+                <button class="carousel-button prev" onclick="moveCarousel(-1)">
+                    <span class="material-icons">chevron_left</span>
+                </button>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <span class="material-icons">home</span>
+                            </div>
+                            <h3>Residential Construction</h3>
+                            <p>Building dream homes with precision and care, from custom designs to multi-family housing complexes.</p>
+                            <a href="/service-1.html">
+                                View More <span class="material-icons">arrow_forward</span>
+                            </a>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <span class="material-icons">business</span>
+                            </div>
+                            <h3>Commercial Projects</h3>
+                            <p>Constructing state-of-the-art commercial spaces, including offices, retail centers, and industrial facilities.</p>
+                            <a href="/service-1.html">
+                                View More <span class="material-icons">arrow_forward</span>
+                            </a>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <span class="material-icons">construction</span>
+                            </div>
+                            <h3>Renovations</h3>
+                            <p>Transforming existing structures with modern upgrades, historical restorations, and functional improvements.</p>
+                            <a href="/service-1.html">
+                                View More <span class="material-icons">arrow_forward</span>
+                            </a>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <span class="material-icons">assignment</span>
+                            </div>
+                            <h3>Project Management</h3>
+                            <p>Providing expert oversight and coordination to ensure your project is completed on time and within budget.</p>
+                            <a href="/service-1.html">
+                                View More <span class="material-icons">arrow_forward</span>
+                            </a>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <span class="material-icons">foundation</span>
+                            </div>
+                            <h3>Site Preparation</h3>
+                            <p>Expert groundworks and site preparation to ensure a solid foundation for any construction project.</p>
+                            <a href="/service-1.html">
+                                View More <span class="material-icons">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-button next" onclick="moveCarousel(1)">
+                    <span class="material-icons">chevron_right</span>
+                </button>
+            </div>
+
+            <div class="carousel-dots">
+                <button class="carousel-dot active" onclick="goToSlide(0)"></button>
+                <button class="carousel-dot" onclick="goToSlide(1)"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Clients Section -->
+    <section class="client-section">
+
+        <div class="logo-carousel">
+            <div class="logo-container">
+                <!-- First set of logos -->
+                <div class="client-logo">
+                    <img src="1.png" alt="Client 1">
+                </div>
+                <div class="client-logo">
+                    <img src="2.png" alt="Client 2">
+                </div>
+                <div class="client-logo">
+                    <img src="3.png" alt="Client 2">
+                </div>
+                <div class="client-logo">
+                    <img src="4.png" alt="Client 4">
+                </div>
+
+                <!-- Duplicate logos for continuous scrolling effect -->
+                <div class="client-logo">
+                    <img src="1.png" alt="Client 1">
+                </div>
+                <div class="client-logo">
+                    <img src="2.png" alt="Client 2">
+                </div>
+                <div class="client-logo">
+                    <img src="3.png" alt="Client 2">
+                </div>
+                <div class="client-logo">
+                    <img src="4.png" alt="Client 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer ----------------------------------------------------------------------------------------------->
+<footer class="euler-footer">
+        <div class="euler-footer-container">
+            <div class="euler-footer-content">
+                <!-- Company Info Section -->
+                <div class="euler-footer-section euler-footer-company-info">
+                    <a href="/" class="euler-footer-logo">
+                        <img src="logo.png" alt="A.B.M Construction Ltd Logo">
+                    </a>
+                    <div class="euler-footer-description">
+                        We're dedicated to enhancing the construction journey for our clients. 
+                    </div>
+                    <div class="euler-footer-social-links">
+                        <a href="https://web.facebook.com/abmconltd" target="_blank aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kayinda-muchepa-1b5568185/?originalSubdomain=zm" target="_blank aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info Section -->
+                <div class="euler-footer-section euler-footer-contact-info">
+                    <h3>Contact Us</h3>
+                    <div class="euler-footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>+260 966120659</div>
+                    </div>
+                    <div class="euler-footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>info@abmconltd.com</div>
+                    </div>
+                    <div class="euler-footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            Woodlands , Lusaka, Zambia
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Services Section -->
+                <div class="euler-footer-section euler-footer-services">
+                    <h3>Quick Services</h3>
+                    <ul class="euler-footer-services-list">
+                        <li><a href="/service-1">Service-1</a></li>
+                        <li><a href="/service-1">Service-2</a></li>
+                        <li><a href="/service-1">Service-3</a></li>
+                        <li><a href="/service-1">Service-4</a></li>
+                        <li><a href="/#services">View all</a></li>
+                    </ul>
+                </div>
+
+                <!-- Opening Hours Section -->
+                <div class="euler-footer-section euler-footer-hours-info">
+                    <h3>Opening Hours</h3>
+                    <div class="euler-footer-hours-item">
+                        <i class="far fa-clock"></i>
+                        <div>
+                            <div class="euler-footer-day">Monday - Friday</div>
+                            <div class="euler-footer-time">8:00 AM - 5:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="euler-footer-hours-item euler-footer-closed">
+                        <i class="far fa-clock"></i>
+                        <div>
+                            <div class="euler-footer-day">Saturday-Sunday</div>
+                            <div class="euler-footer-time">CLOSED</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="euler-footer-bottom">
+                <p>Copyright © 2025 A.B.M Construction limited - All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            
+            const icon = menuToggle.querySelector('i');
+            if (nav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            nav.classList.remove('active');
+            
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (nav.classList.contains('active') && 
+                !nav.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                closeMenu();
+            }
+        });
+
+        // Services Carousel
+        let currentSlide = 0;
+        const track = document.getElementById('carouselTrack');
+        const cards = document.querySelectorAll('.service-card');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let cardsPerView = 3;
+
+        function updateCardsPerView() {
+            if (window.innerWidth <= 768) {
+                cardsPerView = 1;
+            } else if (window.innerWidth <= 1024) {
+                cardsPerView = 2;
+            } else {
+                cardsPerView = 3;
+            }
+        }
+
+        function moveCarousel(direction) {
+            updateCardsPerView();
+            const maxSlide = Math.ceil(cards.length / cardsPerView) - 1;
+            
+            currentSlide += direction;
+            
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide > maxSlide) currentSlide = maxSlide;
+            
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 30;
+            const offset = currentSlide * (cardWidth + gap) * cardsPerView;
+            
+            track.style.transform = `translateX(-${offset}px)`;
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        window.addEventListener('resize', () => {
+            updateCardsPerView();
+            updateCarousel();
+        });
+
+        updateCardsPerView();
+    </script>
+</body>
+</html>

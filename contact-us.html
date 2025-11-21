@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ABM Construction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* Header Section */
+        .header-section {
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 40, 80, 0.7), rgba(0, 40, 80, 0.7)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: rgba(0, 20, 40, 0.5);
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+
+        .social-icons a:hover {
+            color: #f9a825;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 60px;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-img {
+            width: 250px;
+            height: auto;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f9a825;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #f9a825;
+        }
+
+        /* Header Content */
+        .header-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .header-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .header-content h1 .highlight {
+            color: #f9a825;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            margin-top: 20px;
+        }
+
+        .breadcrumbs a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs a:hover {
+            color: #f9a825;
+        }
+
+        .breadcrumbs .separator {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .breadcrumbs .current {
+            color: #f9a825;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 20px;
+            background: #ffffff;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-label {
+            color: #f9a825;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: #002850;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Contact Info Cards */
+        .contact-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 40, 80, 0.1);
+        }
+
+        .contact-card-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 50%;
+            background: rgba(249, 168, 37, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-card-icon .material-icons {
+            color: #f9a825;
+            font-size: 28px;
+        }
+
+        .contact-card-content h3 {
+            font-size: 18px;
+            color: #002850;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .contact-card-content p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .contact-card-content a {
+            color: #f9a825;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+
+        .contact-card-content a:hover {
+            color: #d68a00;
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 28px;
+            color: #002850;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f9a825;
+            box-shadow: 0 0 0 3px rgba(249, 168, 37, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #f9a825;
+            color: white;
+            font-weight: 700;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: #d68a00;
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Map Section */
+        .map-section {
+            margin-top: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 5px 20px rgba(0, 40, 80, 0.08);
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo-img {
+                width: 200px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: rgba(0, 20, 40, 0.98);
+                transition: right 0.3s ease;
+                z-index: 999;
+                padding-top: 80px;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+            }
+
+            nav ul li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            nav a {
+                display: block;
+                padding: 20px 0;
+                font-size: 16px;
+            }
+
+            .header-section {
+                height: 45vh;
+                min-height: 350px;
+            }
+
+            .header-content h1 {
+                font-size: 28px;
+                letter-spacing: 2px;
+            }
+
+            .breadcrumbs {
+                font-size: 13px;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+
+            .contact-section {
+                padding: 50px 20px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .contact-form-wrapper {
+                padding: 30px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .map-section iframe {
+                height: 350px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .top-bar {
+                padding: 12px 40px;
+            }
+
+            header {
+                padding: 25px 40px;
+            }
+
+            .logo-img {
+                width: 220px;
+            }
+
+            nav ul {
+                gap: 35px;
+            }
+
+            nav a {
+                font-size: 15px;
+            }
+
+            .header-section {
+                height: 48vh;
+            }
+
+            .header-content h1 {
+                font-size: 40px;
+            }
+
+            .contact-section {
+                padding: 60px 30px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* footer Section styles *************************************************************************************/
+
+        .euler-footer {
+            background-color: #000000;
+            color: #f9a825;
+            padding: 80px 0 20px;
+        }
+
+        .euler-footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .euler-footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .euler-footer-section h3 {
+            
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .euler-footer-company-info {
+            max-width: 280px;
+        }
+
+        .euler-footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .euler-footer-logo img {
+            width: 220px;
+            
+
+            border-radius: 5px;
+            
+        }
+
+        .euler-footer-logo-text h2 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .euler-footer-logo-text p {
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        .euler-footer-description {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .euler-footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .euler-footer-social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f9a825;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .euler-footer-social-links a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .euler-footer-contact-info .euler-footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .euler-footer-contact-info .euler-footer-contact-item i {
+            color: var(--primary-color);
+            width: 20px;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+
+        .euler-footer-contact-info .euler-footer-contact-item div {
+            color: #cccccc;
+        }
+
+        .euler-footer-services-list {
+            list-style: none;
+        }
+
+        .euler-footer-services-list li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .euler-footer-services-list li a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .euler-footer-services-list li a:hover {
+            color: var(--primary-color);
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item i {
+            color: var(--primary-color);
+            width: 20px;
+            margin-right: 15px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item div {
+            color: #cccccc;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item .euler-footer-day {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item .euler-footer-time {
+            font-size: 14px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item.euler-footer-closed .euler-footer-time {
+            color: #f9a825;
+            font-weight: 600;
+        }
+
+        .euler-footer-bottom {
+            border-top: 1px solid #404040;
+            padding-top: 20px;
+            text-align: center;
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .euler-footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .euler-footer-company-info {
+                max-width: 100%;
+            }
+
+            .euler-footer-container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 992px) and (min-width: 769px) {
+            .euler-footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <div class="top-bar">
+            <div class="social-icons">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +260 773519652</span>
+                <span><i class="fas fa-envelope"></i> info@abmconltd.com</span>
+                <span><i class="fas fa-clock"></i> Mon-Fri: 8:00 - 17:00</span>
+            </div>
+        </div>
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="ABM Construction Logo" class="logo-img">
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/" onclick="closeMenu()">Home</a></li>
+                    <li><a href="/#about" onclick="closeMenu()">About us</a></li>
+                    <li><a href="/#services" onclick="closeMenu()">Services</a></li>
+                    <li><a href="/projects.html" onclick="closeMenu()">Projects</a></li>
+                    <li><a href="/contact-us.html" onclick="closeMenu()">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="header-content">
+            <h1>Contact <span class="highlight">Us</span></h1>
+            <div class="breadcrumbs">
+                <a href="/">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Contact</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="section-header">
+                <span class="section-label">Contact Us</span>
+                <h2>Get in Touch with Our Team</h2>
+                <p>Have a project in mind or need more information about our services? We're here to help. Reach out to us through any of the channels below, and let's start building your vision together.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <span class="material-icons">phone</span>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>Call Us</h3>
+                            <p>Speak directly with our team.</p>
+                            <a href="tel:+260773519652">+260 773519652</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <span class="material-icons">email</span>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>Email Us</h3>
+                            <p>Send us your inquiries.</p>
+                            <a href="mailto:info@abmconltd.com">info@abmconltd.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <span class="material-icons">location_on</span>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>Visit Us</h3>
+                            <p>Woodlands , Lusaka, Zambia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h3>Send a Message</h3>
+                    <form class="form-grid" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Regarding my project" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us more about your needs..." required></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <button type="submit" class="submit-btn">Submit Inquiry</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123086.08552680581!2d28.230719638424264!3d-15.411139454174352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940f550993a4361%3A0x2897531a742d4a99!2sLusaka%2C%20Zambia!5e0!3m2!1sen!2sus!4v1693309549302!5m2!1sen!2sus"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <!-- Footer ----------------------------------------------------------------------------------------------->
+<footer class="euler-footer">
+        <div class="euler-footer-container">
+            <div class="euler-footer-content">
+                <!-- Company Info Section -->
+                <div class="euler-footer-section euler-footer-company-info">
+                    <a href="/" class="euler-footer-logo">
+                        <img src="logo.png" alt="A.B.M Construction Ltd Logo">
+                    </a>
+                    <div class="euler-footer-description">
+                        We're dedicated to enhancing the construction journey for our clients. 
+                    </div>
+                    <div class="euler-footer-social-links">
+                        <a href="https://web.facebook.com/abmconltd" target="_blank aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kayinda-muchepa-1b5568185/?originalSubdomain=zm" target="_blank aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info Section -->
+                <div class="euler-footer-section euler-footer-contact-info">
+                    <h3>Contact Us</h3>
+                    <div class="euler-footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>+260 966120659</div>
+                    </div>
+                    <div class="euler-footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>info@abmconltd.com</div>
+                    </div>
+                    <div class="euler-footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            Woodlands , Lusaka, Zambia
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Services Section -->
+                <div class="euler-footer-section euler-footer-services">
+                    <h3>Quick Services</h3>
+                    <ul class="euler-footer-services-list">
+                        <li><a href="/service-1">Service-1</a></li>
+                        <li><a href="/service-1">Service-2</a></li>
+                        <li><a href="/service-1">Service-3</a></li>
+                        <li><a href="/service-1">Service-4</a></li>
+                        <li><a href="/#services">View all</a></li>
+                    </ul>
+                </div>
+
+                <!-- Opening Hours Section -->
+                <div class="euler-footer-section euler-footer-hours-info">
+                    <h3>Opening Hours</h3>
+                    <div class="euler-footer-hours-item">
+                        <i class="far fa-clock"></i>
+                        <div>
+                            <div class="euler-footer-day">Monday - Friday</div>
+                            <div class="euler-footer-time">8:00 AM - 5:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="euler-footer-hours-item euler-footer-closed">
+                        <i class="far fa-clock"></i>
+                        <div>
+                            <div class="euler-footer-day">Saturday-Sunday</div>
+                            <div class="euler-footer-time">CLOSED</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="euler-footer-bottom">
+                <p>Copyright © 2025 A.B.M Construction limited - All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            
+            const icon = menuToggle.querySelector('i');
+            if (nav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            nav.classList.remove('active');
+            
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (nav.classList.contains('active') && 
+                !nav.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                closeMenu();
+            }
+        });
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your server
+            console.log('Form submitted:', data);
+            
+            // Show success message (you can customize this)
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residential Construction - ABM Construction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* Header Section */
+        .header-section {
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 40, 80, 0.7), rgba(0, 40, 80, 0.7)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: rgba(0, 20, 40, 0.5);
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+
+        .social-icons a:hover {
+            color: #f9a825;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 60px;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-img {
+            width: 250px;
+            height: auto;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f9a825;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #f9a825;
+        }
+
+        /* Header Content */
+        .header-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .header-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .header-content h1 .highlight {
+            color: #f9a825;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            margin-top: 20px;
+        }
+
+        .breadcrumbs a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs a:hover {
+            color: #f9a825;
+        }
+
+        .breadcrumbs .separator {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .breadcrumbs .current {
+            color: #f9a825;
+            font-weight: 600;
+        }
+
+        /* Service Content Section */
+        .service-content {
+            padding: 64px 16px;
+            background: #fafafa;
+        }
+
+        .service-content.dark {
+            background: #1a1a1a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Introduction */
+        .service-intro {
+            max-width: 896px;
+            margin: 0 auto 48px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .service-intro h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .dark .service-intro h2 {
+            color: #ffffff;
+        }
+
+        .service-intro p {
+            font-size: 17px;
+            color: #666666;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .dark .service-intro p {
+            color: #a0a0a0;
+        }
+
+        /* What We Offer Section */
+        .offer-section {
+            width: 100%;
+            background: #ffffff;
+            padding: 64px 0;
+            margin-bottom: 80px;
+        }
+
+        .dark .offer-section {
+            background: #2a2a2a;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .offer-content {
+            order: 2;
+        }
+
+        .offer-content h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+
+        .dark .offer-content h3 {
+            color: #ffffff;
+        }
+
+        .offer-description {
+            color: #666666;
+            margin-bottom: 32px;
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        .dark .offer-description {
+            color: #a0a0a0;
+        }
+
+        .offer-items {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .offer-icon {
+            flex-shrink: 0;
+        }
+
+        .offer-icon .material-icons {
+            color: #f9a825;
+            font-size: 32px;
+        }
+
+        .offer-item-content h4 {
+            font-weight: 600;
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .dark .offer-item-content h4 {
+            color: #ffffff;
+        }
+
+        .offer-item-content p {
+            color: #666666;
+            font-size: 15px;
+        }
+
+        .dark .offer-item-content p {
+            color: #a0a0a0;
+        }
+
+        .offer-image {
+            order: 1;
+        }
+
+        .offer-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Process Section */
+        .process-section {
+            margin-bottom: 80px;
+        }
+
+        .process-header {
+            max-width: 768px;
+            margin: 0 auto 64px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .process-header h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .dark .process-header h3 {
+            color: #ffffff;
+        }
+
+        .process-header p {
+            font-size: 17px;
+            color: #666666;
+            line-height: 1.8;
+        }
+
+        .dark .process-header p {
+            color: #a0a0a0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .process-card {
+            text-align: center;
+            padding: 32px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .dark .process-card {
+            background: #2a2a2a;
+        }
+
+        .process-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .process-icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            width: 80px;
+            margin: 0 auto 20px;
+            background: rgba(249, 168, 37, 0.1);
+            border-radius: 50%;
+        }
+
+        .process-icon-wrapper .material-icons {
+            color: #f9a825;
+            font-size: 36px;
+        }
+
+        .process-card h4 {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .dark .process-card h4 {
+            color: #ffffff;
+        }
+
+        .process-card p {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .dark .process-card p {
+            color: #a0a0a0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            width: 100%;
+            background: #ffffff;
+            padding: 64px 0;
+        }
+
+        .dark .cta-section {
+            background: #2a2a2a;
+        }
+
+        .cta-content {
+            text-align: center;
+        }
+
+        .cta-content h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .dark .cta-content h3 {
+            color: #ffffff;
+        }
+
+        .cta-content p {
+            font-size: 17px;
+            color: #666666;
+            max-width: 672px;
+            margin: 0 auto 32px;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+
+        .dark .cta-content p {
+            color: #a0a0a0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #f9a825;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 16px 48px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #d68a00;
+            transform: translateY(-4px);
+        }
+
+        /* Responsive - Tablet */
+        @media (min-width: 768px) {
+            .service-content {
+                padding: 80px 16px;
+            }
+
+            .service-intro h2 {
+                font-size: 48px;
+            }
+
+            .offer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 64px;
+            }
+
+            .offer-content {
+                order: 1;
+            }
+
+            .offer-image {
+                order: 2;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-section {
+                padding: 80px 0;
+            }
+        }
+
+        /* Responsive - Desktop */
+        @media (min-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo-img {
+                width: 200px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: rgba(0, 20, 40, 0.98);
+                transition: right 0.3s ease;
+                z-index: 999;
+                padding-top: 80px;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+            }
+
+            nav ul li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            nav a {
+                display: block;
+                padding: 20px 0;
+                font-size: 16px;
+            }
+
+            .header-section {
+                height: 45vh;
+                min-height: 350px;
+            }
+
+            .header-content h1 {
+                font-size: 28px;
+                letter-spacing: 2px;
+            }
+
+            .breadcrumbs {
+                font-size: 13px;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+
+            .service-intro h2 {
+                font-size: 32px;
+            }
+
+            .service-intro p {
+                font-size: 16px;
+                line-height: 1.9;
+            }
+
+            .offer-content h3,
+            .process-header h3,
+            .cta-content h3 {
+                font-size: 28px;
+            }
+
+            .process-header p,
+            .cta-content p {
+                font-size: 16px;
+                line-height: 1.9;
+            }
+
+            .offer-image img {
+                height: 320px;
+            }
+
+            .offer-section {
+                padding: 48px 0;
+                margin-bottom: 60px;
+            }
+
+            .process-section {
+                margin-bottom: 60px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .top-bar {
+                padding: 12px 40px;
+            }
+
+            header {
+                padding: 25px 40px;
+            }
+
+            .logo-img {
+                width: 220px;
+            }
+
+            nav ul {
+                gap: 35px;
+            }
+
+            nav a {
+                font-size: 15px;
+            }
+
+            .header-section {
+                height: 48vh;
+            }
+
+            .header-content h1 {
+                font-size: 40px;
+            }
+        }
+        /* footer Section styles *************************************************************************************/
+
+        .euler-footer {
+            background-color: #000000;
+            color: #f9a825;
+            padding: 80px 0 20px;
+        }
+
+        .euler-footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .euler-footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .euler-footer-section h3 {
+            
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .euler-footer-company-info {
+            max-width: 280px;
+        }
+
+        .euler-footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .euler-footer-logo img {
+            width: 220px;
+            
+
+            border-radius: 5px;
+            
+        }
+
+        .euler-footer-logo-text h2 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .euler-footer-logo-text p {
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        .euler-footer-description {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .euler-footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .euler-footer-social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f9a825;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .euler-footer-social-links a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .euler-footer-contact-info .euler-footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .euler-footer-contact-info .euler-footer-contact-item i {
+            color: var(--primary-color);
+            width: 20px;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+
+        .euler-footer-contact-info .euler-footer-contact-item div {
+            color: #cccccc;
+        }
+
+        .euler-footer-services-list {
+            list-style: none;
+        }
+
+        .euler-footer-services-list li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .euler-footer-services-list li a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .euler-footer-services-list li a:hover {
+            color: var(--primary-color);
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item i {
+            color: var(--primary-color);
+            width: 20px;
+            margin-right: 15px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item div {
+            color: #cccccc;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item .euler-footer-day {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item .euler-footer-time {
+            font-size: 14px;
+        }
+
+        .euler-footer-hours-info .euler-footer-hours-item.euler-footer-closed .euler-footer-time {
+            color: #f9a825;
+            font-weight: 600;
+        }
+
+        .euler-footer-bottom {
+            border-top: 1px solid #404040;
+            padding-top: 20px;
+            text-align: center;
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .euler-footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .euler-footer-company-info {
+                max-width: 100%;
+            }
+
+            .euler-footer-container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 992px) and (min-width: 769px) {
+            .euler-footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <div class="top-bar">
+            <div class="social-icons">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +260 773519652</span>
+                <span><i class="fas fa-envelope"></i> info@abmconltd.com</span>
+                <span><i class="fas fa-clock"></i> Mon-Fri: 8:00 - 17:00</span>
+            </div>
+        </div>
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="ABM Construction Logo" class="logo-img">
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/index.html" onclick="closeMenu()">Home</a></li>
+                    <li><a href="/#about" onclick="closeMenu()">About us</a></li>
+                    <li><a href="/#services" onclick="closeMenu()">Services</a></li>
+                    <li><a href="/projects.html" onclick="closeMenu()">Projects</a></li>
+                    <li><a href="/contact-us.html" onclick="closeMenu()">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="header-content">
+            <h1><span class="highlight">Residential</span> Construction</h1>
+            <div class="breadcrumbs">
+                <a href="/">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="/#services">Services</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Residential Construction</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Content -->
+    <section class="service-content">
+        <div class="container">
+            <div class="service-intro">
+                <h2>Building Your Dream Home, From Foundation to Finish</h2>
+                <p>
+                    At A.B.M. Construction, we understand that a home is more than just a structure; it's a sanctuary, a space for memories, and a reflection of your dreams. Our residential construction service is dedicated to bringing your vision to life with unparalleled craftsmanship, meticulous attention to detail, and a commitment to quality that stands the test of time.
+                </p>
+            </div>
+        </div>
+
+        <div class="offer-section">
+            <div class="container">
+                <div class="offer-grid">
+                    <div class="offer-content">
+                        <h3>What We Offer</h3>
+                        <p class="offer-description">
+                            Whether you're looking to build a custom single-family home, a modern duplex, or a multi-unit residential complex, our experienced team manages every aspect of the project.
+                        </p>
+                        <div class="offer-items">
+                            <div class="offer-item">
+                                <div class="offer-icon">
+                                    <span class="material-icons">check_circle</span>
+                                </div>
+                                <div class="offer-item-content">
+                                    <h4>Custom Home Construction</h4>
+                                    <p>Tailored designs that reflect your unique style and needs.</p>
+                                </div>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-icon">
+                                    <span class="material-icons">check_circle</span>
+                                </div>
+                                <div class="offer-item-content">
+                                    <h4>Multi-Family Developments</h4>
+                                    <p>Expertise in developing duplexes, townhouses, and apartment complexes.</p>
+                                </div>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-icon">
+                                    <span class="material-icons">check_circle</span>
+                                </div>
+                                <div class="offer-item-content">
+                                    <h4>Sustainable Building</h4>
+                                    <p>Utilizing high-quality, eco-friendly materials and practices.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offer-image">
+                        <img alt="Modern residential house under construction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuKEoJf1PURWKzotwexL89ExcOC2nbGZNsmJZ7s0Wgf8eggKxJVatZI0778a0dT2y3zx9CZKQ__WoIMCPC16CiF5UdktxMBdR8qaVQT6d-m4OF9P6GBlE83wfNMwsLRpZ5lRa6fDmKkfYMKbCFH6rAtd03LylBztTTyhJlEcQ884ZUH4QTJCj4BF6Np26ed8hBeldc3g4XQMEP0F-f2e-gG2f5aOC0JYuqgf_xmoAjvnkiT6B1CLpDz6HmHlhYnwyTmk6MFGkgA7Qr">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="process-section">
+                <div class="process-header">
+                    <h3>Our Streamlined Process</h3>
+                    <p>We follow a structured and transparent process to ensure your project is completed on time, within budget, and to the highest standards of quality.</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-icon-wrapper">
+                            <span class="material-icons">lightbulb</span>
+                        </div>
+                        <h4>1. Consultation</h4>
+                        <p>Understanding your vision, requirements, and budget.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon-wrapper">
+                            <span class="material-icons">draw</span>
+                        </div>
+                        <h4>2. Design &amp; Planning</h4>
+                        <p>Creating detailed blueprints and project timelines.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon-wrapper">
+                            <span class="material-icons">construction</span>
+                        </div>
+                        <h4>3. Construction</h4>
+                        <p>Executing the build with expert craftsmanship and management.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon-wrapper">
+                            <span class="material-icons">home</span>
+                        </div>
+                        <h4>4. Handover</h4>
+                        <p>Final walkthrough and delivery of your dream home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h3>Ready to Build Your Future?</h3>
+                <p>Let's discuss how we can turn your residential construction ideas into a reality. Contact us today for a consultation.</p>
+                <a href="/contact-us.html" class="cta-button">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+    
+<!-- Footer ----------------------------------------------------------------------------------------------->
+<footer class="euler-footer">
+        <div class="euler-footer-container">
+            <div class="euler-footer-content">
+                <!-- Company Info Section -->
+                <div class="euler-footer-section euler-footer-company-info">
+                    <a href="/" class="euler-footer-logo">
+                        <img src="logo.png" alt="A.B.M Construction Ltd Logo">
+                    </a>
+                    <div class="euler-footer-description">
+                        We're dedicated to enhancing the construction journey for our clients. 
+                    </div>
+                    <div class="euler-footer-social-links">
+                        <a href="https://web.facebook.com/abmconltd" target="_blank aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kayinda-muchepa-1b5568185/?originalSubdomain=zm" target="_blank aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info Section -->
+                <div class="euler-footer-section euler-footer-contact-info">
+                    <h3>Contact Us</h3>
+                    <div class="euler-footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>+260 966120659</div>
+                    </div>
+                    <div class="euler-footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>info@abmconltd.com</div>
+                    </div>
+                    <div class="euler-footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            Woodlands , Lusaka, Zambia
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Services Section -->
+                <div class="euler-footer-section euler-footer-services">
+                    <h3>Quick Services</h3>
+                    <ul class="euler-footer-services-list">
+                        <li><a href="/service-1">Service-1</a></li>
+                        <li><a href="/service-1">Service-2</a></li>
+                        <li><a href="/service-1">Service-3</a></li>
+                        <li><a href="/service-1">Service-4</a></li>
+                        <li><a href="/#services">View all</a></li>
+                    </ul>
+                </div>
+
+                <!-- Opening Hours Section -->
+                <div class="euler-footer-section euler-footer-hours-info">
+                    <h3>Opening Hours</h3>
+                    <div class="euler-footer-hours-item">
+                        <i class="far fa-clock"></i>
+                        <div>
+                            <div class="euler-footer-day">Monday - Friday</div>
+                            <div class="euler-footer-time">8:00 AM - 5:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="euler-footer-hours-item euler-footer-closed">
+                        <i class="far fa-clock"></i>
+                        <div>
+                            <div class="euler-footer-day">Saturday-Sunday</div>
+                            <div class="euler-footer-time">CLOSED</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="euler-footer-bottom">
+                <p>Copyright © 2025 A.B.M Construction limited - All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            
+            const icon = menuToggle.querySelector('i');
+            if (nav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            nav.classList.remove('active');
+            
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (nav.classList.contains('active') && 
+                !nav.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
