@@ -1096,7 +1096,7 @@
   const formObject = Object.fromEntries(formData.entries()); // Convert to object
 
   try {
-    const response = await fetch('http://localhost:3000/contact/send-email', {
+    const response = await fetch('https://abm-construction.onrender.com/contact/send-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formObject),
