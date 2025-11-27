@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects - ABM Construction</title>
+    <title>General Civil Works</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +91,13 @@
         .logo-img {
             width: 250px;
             height: auto;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
         nav ul {
@@ -195,244 +202,340 @@
             font-weight: 600;
         }
 
-        /* Projects Section */
-        .projects-section {
-            padding: 80px 20px;
-            background: #ffffff;
+        /* Service Content Section */
+        .service-content {
+            padding: 64px 16px;
+            background: #fafafa;
         }
 
-        .projects-container {
+        .service-content.dark {
+            background: #1a1a1a;
+        }
+
+        .container {
             max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Introduction */
+        .service-intro {
+            max-width: 1000px;
+            margin: 0 auto 48px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .service-intro h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .dark .service-intro h2 {
+            color: #ffffff;
+        }
+
+        .service-intro p {
+            font-size: 17px;
+            color: #666666;
+            line-height: 1.8;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
+        .dark .service-intro p {
+            color: #a0a0a0;
         }
 
-        .section-label {
-            color: #f9a825;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 14px;
-            margin-bottom: 10px;
-            display: block;
+        /* What We Offer Section */
+        .offer-section {
+            width: 100%;
+            background: #ffffff;
+            padding: 64px 0;
+            margin-bottom: 80px;
         }
 
-        .section-header h2 {
+        .dark .offer-section {
+            background: #2a2a2a;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .offer-content {
+            order: 2;
+        }
+
+        .offer-content h3 {
             font-size: 36px;
-            color: #002850;
-            margin-bottom: 20px;
             font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 24px;
         }
 
-        .section-header p {
+        .dark .offer-content h3 {
+            color: #ffffff;
+        }
+
+        .offer-description {
+            color: #666666;
+            margin-bottom: 32px;
             font-size: 16px;
-            color: #666;
-            line-height: 1.9;
+            line-height: 1.75;
         }
 
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-bottom: 60px;
+        .dark .offer-description {
+            color: #a0a0a0;
         }
 
-        /* Project Card */
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 2px 10px rgba(0, 40, 80, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+        .offer-items {
             display: flex;
             flex-direction: column;
+            gap: 24px;
         }
 
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 40, 80, 0.15);
-        }
-
-        /* Image Slider */
-        .image-slider-container {
-            position: relative;
-            width: 100%;
-            height: 300px;
-        }
-
-        .image-slider {
-            width: 100%;
-            height: 100%;
-            overflow-x: scroll;
-            scroll-snap-type: x mandatory;
+        .offer-item {
             display: flex;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
+            align-items: flex-start;
+            gap: 16px;
         }
 
-        .image-slider::-webkit-scrollbar {
-            display: none;
-        }
-
-        .image-slider img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .offer-icon {
             flex-shrink: 0;
-            scroll-snap-align: center;
         }
 
-        .slider-controls {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 10px;
-            pointer-events: none;
+        .offer-icon .material-icons {
+            color: #f9a825;
+            font-size: 32px;
         }
 
-        .slider-btn {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.4);
-            border: none;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.3s;
-            pointer-events: auto;
-        }
-
-        .slider-btn:hover {
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        .slider-btn .material-icons {
-            font-size: 20px;
-        }
-
-        /* Project Content */
-        .project-content {
-            padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-content h3 {
-            font-size: 22px;
-            color: #002850;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .project-location {
-            display: flex;
-            align-items: center;
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .project-location .material-icons {
+        .offer-item-content h4 {
+            font-weight: 600;
             font-size: 18px;
-            margin-right: 6px;
-            color: #f9a825;
+            color: #1a1a1a;
+            margin-bottom: 4px;
         }
 
-        .project-description {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            flex-grow: 1;
+        .dark .offer-item-content h4 {
+            color: #ffffff;
         }
 
-        /* Project Details */
-        .project-details {
-            border-top: 1px solid #e0e0e0;
-            padding-top: 20px;
-            margin-top: auto;
+        .offer-item-content p {
+            color: #666666;
+            font-size: 15px;
         }
 
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+        .dark .offer-item-content p {
+            color: #a0a0a0;
         }
 
-        .detail-item {
-            display: flex;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
+        .offer-image {
+            order: 1;
         }
 
-        .detail-item .material-icons {
-            font-size: 20px;
-            color: #f9a825;
-            margin-right: 10px;
+        .offer-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
-        .project-category {
-            display: flex;
-            align-items: center;
+        /* Process Section */
+        .process-section {
+            margin-bottom: 80px;
         }
 
-        .category-badge {
-            background: rgba(249, 168, 37, 0.15);
-            color: #f9a825;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 6px 16px;
-            border-radius: 20px;
-        }
-
-        /* Load More Button */
-        .load-more-container {
+        .process-header {
+            max-width: 768px;
+            margin: 0 auto 64px;
             text-align: center;
-            margin-top: 60px;
+            padding: 0 20px;
         }
 
-        .load-more-btn {
-            background: #f9a825;
-            color: white;
+        .process-header h3 {
+            font-size: 36px;
             font-weight: 700;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-            font-family: 'Poppins', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
         }
 
-        .load-more-btn:hover {
-            background: #d68a00;
+        .dark .process-header h3 {
+            color: #ffffff;
+        }
+
+        .process-header p {
+            font-size: 17px;
+            color: #666666;
+            line-height: 1.8;
+        }
+
+        .dark .process-header p {
+            color: #a0a0a0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .process-card {
+            text-align: center;
+            padding: 32px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .dark .process-card {
+            background: #2a2a2a;
+        }
+
+        .process-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             transform: translateY(-2px);
         }
 
-        .load-more-btn:active {
-            transform: translateY(0);
+        .process-icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            width: 80px;
+            margin: 0 auto 20px;
+            background: rgba(249, 168, 37, 0.1);
+            border-radius: 50%;
         }
 
-        /* Responsive */
+        .process-icon-wrapper .material-icons {
+            color: #f9a825;
+            font-size: 36px;
+        }
+
+        .process-card h4 {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .dark .process-card h4 {
+            color: #ffffff;
+        }
+
+        .process-card p {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .dark .process-card p {
+            color: #a0a0a0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            width: 100%;
+            background: #ffffff;
+            padding: 64px 0;
+        }
+
+        .dark .cta-section {
+            background: #2a2a2a;
+        }
+
+        .cta-content {
+            text-align: center;
+        }
+
+        .cta-content h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .dark .cta-content h3 {
+            color: #ffffff;
+        }
+
+        .cta-content p {
+            font-size: 17px;
+            color: #666666;
+            max-width: 672px;
+            margin: 0 auto 32px;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+
+        .dark .cta-content p {
+            color: #a0a0a0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #f9a825;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 16px 48px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #d68a00;
+            transform: translateY(-4px);
+        }
+
+        /* Responsive - Tablet */
+        @media (min-width: 768px) {
+            .service-content {
+                padding: 80px 16px;
+            }
+
+            .service-intro h2 {
+                font-size: 48px;
+            }
+
+            .offer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 64px;
+            }
+
+            .offer-content {
+                order: 1;
+            }
+
+            .offer-image {
+                order: 2;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-section {
+                padding: 80px 0;
+            }
+        }
+
+        /* Responsive - Desktop */
+        @media (min-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Mobile Menu */
         @media (max-width: 768px) {
             .top-bar {
                 display: none;
@@ -498,36 +601,38 @@
                 flex-wrap: wrap;
             }
 
-            .projects-section {
-                padding: 50px 20px;
+            .service-intro h2 {
+                font-size: 32px;
             }
 
-            .section-header h2 {
+            .service-intro p {
+                font-size: 16px;
+                line-height: 1.9;
+            }
+
+            .offer-content h3,
+            .process-header h3,
+            .cta-content h3 {
                 font-size: 28px;
             }
 
-            .section-header p {
-                font-size: 15px;
-                line-height: 1.8;
-                text-align: justify;
-                padding: 0 10px;
+            .process-header p,
+            .cta-content p {
+                font-size: 16px;
+                line-height: 1.9;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .offer-image img {
+                height: 320px;
             }
 
-            .image-slider-container {
-                height: 250px;
+            .offer-section {
+                padding: 48px 0;
+                margin-bottom: 60px;
             }
 
-            .project-content {
-                padding: 25px 20px;
-            }
-
-            .project-content h3 {
-                font-size: 20px;
+            .process-section {
+                margin-bottom: 60px;
             }
         }
 
@@ -559,22 +664,8 @@
             .header-content h1 {
                 font-size: 40px;
             }
-
-            .projects-section {
-                padding: 60px 30px;
-            }
-
-            .section-header p {
-                font-size: 15px;
-                line-height: 1.8;
-            }
-
-            .projects-grid {
-                gap: 35px;
-            }
         }
-
-                /* footer Section styles *************************************************************************************/
+        /* footer Section styles *************************************************************************************/
 
         .euler-footer {
             background-color: #000000;
@@ -790,37 +881,127 @@
         </header>
 
         <div class="header-content">
-            <h1>Our <span class="highlight">Projects</span></h1>
+            <h1><span class="highlight">General</span> Civil Works</h1>
             <div class="breadcrumbs">
                 <a href="/">
                     <i class="fas fa-home"></i>
                     Home
                 </a>
                 <span class="separator"><i class="fas fa-chevron-right"></i></span>
-                <span class="current">Projects</span>
+                <a href="/#services">Services</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">General Civil Works</span>
             </div>
         </div>
     </div>
 
-    <!-- Projects Section -->
-    <section class="projects-section">
-        <div class="projects-container">
-            <div class="section-header">
-                <span class="section-label">Our Portfolio</span>
-                <h2>Showcasing Our Finest Work</h2>
-                <p>Explore a selection of our completed projects, each a testament to our commitment to quality, innovation, and client satisfaction. Our diverse portfolio spans across various sectors, highlighting our capability to handle projects of any scale and complexity.</p>
+    <!-- Service Content -->
+    <section class="service-content">
+        <div class="container">
+            <div class="service-intro">
+                <h2>Delivering Civil Engineering Solutions With Precision and Reliability</h2>
+                <p>
+                    Our civil works services support safe, efficient, and durable infrastructure development. Whether it's roads, drainage, or full site preparation, we ensure every project meets regulatory standards and performance expectations. With a skilled team and modern equipment, we bring dependable civil engineering expertise to every job.
+                </p>
             </div>
+        </div>
 
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be dynamically inserted here -->
+        <div class="offer-section">
+            <div class="container">
+                <div class="offer-grid">
+                    <div class="offer-content">
+                        <h3>What We Offer</h3>
+                        <p class="offer-description">
+                            Comprehensive civil engineering services focused on durable infrastructure, efficient drainage, and practical site preparation for safe, long-lasting results.
+                        </p>
+                        <div class="offer-items">
+                            <div class="offer-item">
+                                <div class="offer-icon">
+                                    <span class="material-icons">check_circle</span>
+                                </div>
+                                <div class="offer-item-content">
+                                    <h4>Road Construction & Upgrades</h4>
+                                    <p>Quality roadworks designed for longevity and heavy traffic use.</p>
+                                </div>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-icon">
+                                    <span class="material-icons">check_circle</span>
+                                </div>
+                                <div class="offer-item-content">
+                                    <h4>Drainage & Stormwater Systems</h4>
+                                    <p>Efficient systems to manage surface runoff and prevent flooding.</p>
+                                </div>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-icon">
+                                    <span class="material-icons">check_circle</span>
+                                </div>
+                                <div class="offer-item-content">
+                                    <h4>Earthworks & Site Development</h4>
+                                    <p>Professional grading, leveling, and foundation-ready preparation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offer-image">
+                        <img alt="Modern residential house under construction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuKEoJf1PURWKzotwexL89ExcOC2nbGZNsmJZ7s0Wgf8eggKxJVatZI0778a0dT2y3zx9CZKQ__WoIMCPC16CiF5UdktxMBdR8qaVQT6d-m4OF9P6GBlE83wfNMwsLRpZ5lRa6fDmKkfYMKbCFH6rAtd03LylBztTTyhJlEcQ884ZUH4QTJCj4BF6Np26ed8hBeldc3g4XQMEP0F-f2e-gG2f5aOC0JYuqgf_xmoAjvnkiT6B1CLpDz6HmHlhYnwyTmk6MFGkgA7Qr">
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="load-more-container">
-                <button class="load-more-btn" onclick="loadMoreProjects()">Load More Projects</button>
+        <div class="container">
+            <div class="process-section">
+                <div class="process-header">
+                    <h3>Our Streamlined Process</h3>
+                    <p>We follow a structured and transparent process to ensure your project is completed on time, within budget, and to the highest standards of quality.</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-icon-wrapper">
+                            <span class="material-icons">lightbulb</span>
+                        </div>
+                        <h4>1. Consultation</h4>
+                        <p>Understanding your vision, requirements, and budget.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon-wrapper">
+                            <span class="material-icons">draw</span>
+                        </div>
+                        <h4>2. Design &amp; Planning</h4>
+                        <p>Creating detailed blueprints and project timelines.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon-wrapper">
+                            <span class="material-icons">construction</span>
+                        </div>
+                        <h4>3. Construction</h4>
+                        <p>Executing the build with expert craftsmanship and management.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon-wrapper">
+                            <span class="material-icons">home</span>
+                        </div>
+                        <h4>4. Handover</h4>
+                        <p>Final walkthrough and delivery of your dream home.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- Footer ----------------------------------------------------------------------------------------------->
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h3>Ready to Build Your Future?</h3>
+                <p>Let's discuss how we can turn your general civil works ideas into a reality. Contact us today for a consultation.</p>
+                <a href="/contact-us.html" class="cta-button">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+    
+<!-- Footer ----------------------------------------------------------------------------------------------->
 <footer class="euler-footer">
         <div class="euler-footer-container">
             <div class="euler-footer-content">
@@ -900,263 +1081,6 @@
         </div>
     </footer>
     <script>
-        // Projects data - Add new projects here
-        const projectsData = [
-            {
-                title: "Harvest Group: Tokyo Way Service Station",
-                location: "Lusaka, Lusaka Province",
-                description: "A stunning modern villa featuring state-of-the-art amenities and sustainable design, completed ahead of schedule.",
-                images: [
-                    "tokyo_way.jpg"//lh3.googleusercontent.com/aida-public/AB6AXuAyhLIuy8pF-WJjYdGvoN_kGewjvHvmN31a2yF4jn548NIYTJHlENdV_8TRKXdwcIjMg5AuQyQ7GdrTOa00bmoL7EMJw4OzXJiGj-Eg9CXRyTT7Cy4fyeqahja0nxvq5r4Ny1F7JwxEfqmacw53PBYAVhF5_DiXTpSOEm82W-mMXuhZKVVn-YMDs3WbAC43V9Iomm35UDozp2TkZs3ADZfBLET_Ad-eJc9VGSydcTgcZJbZFgjQDMBADyndvNXsN-0YMlHyU6T9DOKe"
-                ],
-                area: "2,500 m²",
-                budget: "N/A",
-                year: "2023",
-                category: "Commercial"
-            },
-            {
-                title: "Harvest Group: Ibex Hill Service Station",
-                location: "Lusaka, Lusaka Province",
-                description: "Development of a multi-story office complex, incorporating innovative workspace design and energy-efficient systems.",
-                images: [
-                    "ibex_station.png"
-                ],
-                area: "15,000 m²",
-                budget: "N/A",
-                year: "2022",
-                category: "Commercial"
-            },
-            {
-                title: "Harvest Group: Woodlands Shopping Centre",
-                location: "Lusaka, Lusaka Province",
-                description: "Meticulous restoration of a landmark building, preserving its historical integrity while modernizing its facilities.",
-                images: [
-                    "mall.jpg",
-                    "about-us.jpg"
-                ],
-                area: "3,200 m²",
-                budget: "$3.1M USD",
-                year: "2021",
-                category: "Renovation"
-            },
-            {
-                title: "Midway Express: Hass Petroleum Service Station",
-                location: "Ndola, Copperbelt Province",
-                description: "Construction of a large-scale industrial warehouse with advanced logistics capabilities and structural efficiency.",
-                images: [
-                    "hass_1.png",
-                    "hass_2.png",
-                    "hass_3.png"
-                ],
-                area: "25,000 m²",
-                budget: "N/A",
-                year: "2023",
-                category: "Industrial"
-            },
-            {
-                title: "Midway Express: Office Block Renovations",
-                location: "Ndola, Copperbelt Province",
-                description: "A vibrant retail center designed to enhance the urban shopping experience, featuring unique architectural elements.",
-                images: [
-                    "hass_reno.png"
-                ],
-                area: "18,000 m²",
-                budget: "N/A",
-                year: "2020",
-                category: "Commercial"
-            },
-            {
-                title: "Cedars Minerals: Copper Processing Plant",
-                location: "Mumbwa, Central Province",
-                description: "A multi-family residential building offering modern living spaces with a focus on community and convenience.",
-                images: [
-                    "cedar_1.png",
-                    "Cedar_2.jpg",
-                    "cedar_3.jpg"
-                ],
-                area: "11,500 m²",
-                budget: "$6.4M USD",
-                year: "2022",
-                category: "Industrial"
-            },
-            {
-                title: "Overspill Primary School: Student Facilities and Outdoor Areas",
-                location: "Lusaka, Lusaka Province",
-                description: "A multi-family residential building offering modern living spaces with a focus on community and convenience.",
-                images: [
-                    "outdoor_1.jpg",
-                    "outdoor_2.png"
-                ],
-                area: "11,500 m²",
-                budget: "N/A",
-                year: "2022",
-                category: "Commercial"
-            },
-            {
-                title: "Overspill Primary School: New Classroom Construction",
-                location: "Lusaka, Lusaka Province",
-                description: "A multi-family residential building offering modern living spaces with a focus on community and convenience.",
-                images: [
-                    "sch_1.jpg",
-                    "sch_2.png",
-                    "sch_3.png"
-                ],
-                area: "11,500 m²",
-                budget: "N/A",
-                year: "2024",
-                category: "Commercial"
-            },
-            {
-                title: "Overspill Primary School: School Hall Repurposing",
-                location: "Lusaka, Lusaka Province",
-                description: "A multi-family residential building offering modern living spaces with a focus on community and convenience.",
-                images: [
-                    "hall.png"
-                ],
-                area: "11,500 m²",
-                budget: "N/A",
-                year: "2022",
-                category: "Commercial"
-            },
-            {
-                title: "UNO Petroleum (Zamfuel): Mumbwa Road Service Station",
-                location: "Mumbwa, Central Province",
-                description: "A multi-family residential building offering modern living spaces with a focus on community and convenience.",
-                images: [
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuCuKEoJf1PURWKzotwexL89ExcOC2nbGZNsmJZ7s0Wgf8eggKxJVatZI0778a0dT2y3zx9CZKQ__WoIMCPC16CiF5UdktxMBdR8qaVQT6d-m4OF9P6GBlE83wfNMwsLRpZ5lRa6fDmKkfYMKbCFH6rAtd03LylBztTTyhJlEcQ884ZUH4QTJCj4BF6Np26ed8hBeldc3g4XQMEP0F-f2e-gG2f5aOC0JYuqgf_xmoAjvnkiT6B1CLpDz6HmHlhYnwyTmk6MFGkgA7Qr"
-                ],
-                area: "11,500 m²",
-                budget: "N/A",
-                year: "2022",
-                category: "Commercial"
-            },
-            {
-                title: "UNO Petroleum (Zamfuel): Mazabuka Service Station",
-                location: "Mazabuka, Southen Province",
-                description: "A multi-family residential building offering modern living spaces with a focus on community and convenience.",
-                images: [
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuCuKEoJf1PURWKzotwexL89ExcOC2nbGZNsmJZ7s0Wgf8eggKxJVatZI0778a0dT2y3zx9CZKQ__WoIMCPC16CiF5UdktxMBdR8qaVQT6d-m4OF9P6GBlE83wfNMwsLRpZ5lRa6fDmKkfYMKbCFH6rAtd03LylBztTTyhJlEcQ884ZUH4QTJCj4BF6Np26ed8hBeldc3g4XQMEP0F-f2e-gG2f5aOC0JYuqgf_xmoAjvnkiT6B1CLpDz6HmHlhYnwyTmk6MFGkgA7Qr"
-                ],
-                area: "11,500 m²",
-                budget: "$6.4M USD",
-                year: "2022",
-                category: "Commercial"
-            },
-            {
-                title: "Texila American University",
-                location: "Lusaka, Lusaka Province",
-                description: "A multi-family residential building offering modern living spaces with a focus on community and convenience.",
-                images: [
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuCuKEoJf1PURWKzotwexL89ExcOC2nbGZNsmJZ7s0Wgf8eggKxJVatZI0778a0dT2y3zx9CZKQ__WoIMCPC16CiF5UdktxMBdR8qaVQT6d-m4OF9P6GBlE83wfNMwsLRpZ5lRa6fDmKkfYMKbCFH6rAtd03LylBztTTyhJlEcQ884ZUH4QTJCj4BF6Np26ed8hBeldc3g4XQMEP0F-f2e-gG2f5aOC0JYuqgf_xmoAjvnkiT6B1CLpDz6HmHlhYnwyTmk6MFGkgA7Qr"
-                ],
-                area: "11,500 m²",
-                budget: "N/A",
-                year: "2022",
-                category: "Commercial"
-            },
-            {
-                title: "Zambia National Building Society",
-                location: "Lusaka, Lusaka Province",
-                description: "A multi-family residential building offering modern living spaces with a focus on community and convenience.",
-                images: [
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuCuKEoJf1PURWKzotwexL89ExcOC2nbGZNsmJZ7s0Wgf8eggKxJVatZI0778a0dT2y3zx9CZKQ__WoIMCPC16CiF5UdktxMBdR8qaVQT6d-m4OF9P6GBlE83wfNMwsLRpZ5lRa6fDmKkfYMKbCFH6rAtd03LylBztTTyhJlEcQ884ZUH4QTJCj4BF6Np26ed8hBeldc3g4XQMEP0F-f2e-gG2f5aOC0JYuqgf_xmoAjvnkiT6B1CLpDz6HmHlhYnwyTmk6MFGkgA7Qr"
-                ],
-                area: "11,500 m²",
-                budget: "N/A",
-                year: "2022",
-                category: "Commercial"
-            }
-            
-        ];
-
-        let displayedProjects = 6; // Initially show 6 projects
-
-        // Function to create project card HTML
-        function createProjectCard(project) {
-            const imagesHTML = project.images.map((img, index) => 
-                `<img src="${img}" alt="${project.title} - Image ${index + 1}" class="w-full h-full object-cover flex-shrink-0 snap-center">`
-            ).join('');
-
-            return `
-                <div class="project-card">
-                    <div class="image-slider-container">
-                        <div class="image-slider">
-                            ${imagesHTML}
-                        </div>
-                        <div class="slider-controls">
-                            <button class="slider-btn" onclick="scrollSlider(this, -1)">
-                                <span class="material-icons">chevron_left</span>
-                            </button>
-                            <button class="slider-btn" onclick="scrollSlider(this, 1)">
-                                <span class="material-icons">chevron_right</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>${project.title}</h3>
-                        <p class="project-location">
-                            <span class="material-icons">location_on</span>
-                            ${project.location}
-                        </p>
-                        <p class="project-description">${project.description}</p>
-                        <div class="project-details">
-                            <div class="details-grid">
-                                <div class="detail-item">
-                                    <span class="material-icons">aspect_ratio</span>
-                                    <span>${project.area}</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="material-icons">monetization_on</span>
-                                    <span>${project.budget}</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="material-icons">calendar_today</span>
-                                    <span>${project.year}</span>
-                                </div>
-                                <div class="project-category">
-                                    <span class="category-badge">${project.category}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Function to render projects
-        function renderProjects() {
-            const grid = document.getElementById('projectsGrid');
-            grid.innerHTML = '';
-            
-            const projectsToShow = projectsData.slice(0, displayedProjects);
-            projectsToShow.forEach(project => {
-                grid.innerHTML += createProjectCard(project);
-            });
-        }
-
-        // Function to scroll image slider
-        function scrollSlider(button, direction) {
-            const sliderContainer = button.closest('.image-slider-container');
-            const slider = sliderContainer.querySelector('.image-slider');
-            const scrollAmount = slider.offsetWidth;
-            
-            slider.scrollBy({
-                left: scrollAmount * direction,
-                behavior: 'smooth'
-            });
-        }
-
-        // Function to load more projects
-        function loadMoreProjects() {
-            displayedProjects += 6;
-            if (displayedProjects >= projectsData.length) {
-                displayedProjects = projectsData.length;
-                document.querySelector('.load-more-btn').style.display = 'none';
-            }
-            renderProjects();
-        }
-
-        // Menu functions
         function toggleMenu() {
             const nav = document.getElementById('nav');
             const menuToggle = document.querySelector('.menu-toggle');
@@ -1191,11 +1115,6 @@
                 !menuToggle.contains(event.target)) {
                 closeMenu();
             }
-        });
-
-        // Initialize projects on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            renderProjects();
         });
     </script>
 </body>
