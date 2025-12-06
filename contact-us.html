@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/png" href="abm-favicon.jpg">
     <style>
@@ -26,8 +28,8 @@
         .header-section {
             height: 50vh;
             min-height: 400px;
-            background: linear-gradient(rgba(0, 40, 80, 0.7), rgba(0, 40, 80, 0.7)), 
-                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 40, 80, 0.7), rgba(0, 40, 80, 0.7)),
+                url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600') center/cover no-repeat;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -568,7 +570,7 @@
         }
 
         .euler-footer-section h3 {
-            
+
             font-size: 20px;
             margin-bottom: 20px;
             font-weight: 600;
@@ -588,10 +590,10 @@
 
         .euler-footer-logo img {
             width: 220px;
-            
+
 
             border-radius: 5px;
-            
+
         }
 
         .euler-footer-logo-text h2 {
@@ -699,6 +701,33 @@
             font-weight: 600;
         }
 
+        .euler-footer-profile-btn {
+            margin-top: 20px;
+        }
+
+        .euler-footer-profile-btn a {
+            display: inline-block;
+            background-color: #f9a825;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .euler-footer-profile-btn a:hover {
+            background-color: #fbb13c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(249, 168, 37, 0.4);
+        }
+
+        .euler-footer-profile-btn a i {
+            margin-right: 8px;
+        }
+
         .euler-footer-bottom {
             border-top: 1px solid #404040;
             padding-top: 20px;
@@ -730,73 +759,77 @@
         }
 
         /* Modal Styles */
-.contact-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-}
+        .contact-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
 
-.contact-modal-content {
-  background-color: white;
-  padding: 30px;
-  border-radius: 8px;
-  max-width: 500px;
-  width: 90%;
-  text-align: center;
-  position: relative;
-}
+        .contact-modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
 
-.contact-close-button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-}
+        .contact-close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
-.contact-modal-stage {
-  display: none;
-}
+        .contact-modal-stage {
+            display: none;
+        }
 
-.contact-modal-button {
-  padding: 10px 20px;
-  margin-top: 15px;
-  background-color: #f9a825;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+        .contact-modal-button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #f9a825;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-/* Loader Styles */
-.contact-loader {
-  width: 50px;
-  padding: 8px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #f9a825;
-  --_m: 
-    conic-gradient(#0000 10%,#000),
-    linear-gradient(#000 0 0) content-box;
-  -webkit-mask: var(--_m);
-          mask: var(--_m);
-  -webkit-mask-composite: source-out;
-          mask-composite: subtract;
-  animation: l3 1s infinite linear;
-  margin: 20px auto;
-}
-@keyframes l3 {to{transform: rotate(1turn)}}
+        /* Loader Styles */
+        .contact-loader {
+            width: 50px;
+            padding: 8px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: #f9a825;
+            --_m:
+                conic-gradient(#0000 10%, #000),
+                linear-gradient(#000 0 0) content-box;
+            -webkit-mask: var(--_m);
+            mask: var(--_m);
+            -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+            animation: l3 1s infinite linear;
+            margin: 20px auto;
+        }
 
-
-</style>
+        @keyframes l3 {
+            to {
+                transform: rotate(1turn)
+            }
+        }
+    </style>
 </head>
+
 <body>
     <div class="header-section">
         <div class="top-bar">
@@ -847,7 +880,8 @@
             <div class="section-header">
                 <span class="section-label">Contact Us</span>
                 <h2>Get in Touch with Our Team</h2>
-                <p>Have a project in mind or need more information about our services? We're here to help. Reach out to us through any of the channels below, and let's start building your vision together.</p>
+                <p>Have a project in mind or need more information about our services? We're here to help. Reach out to
+                    us through any of the channels below, and let's start building your vision together.</p>
             </div>
 
             <div class="contact-grid">
@@ -905,7 +939,8 @@
 
                         <div class="form-group full-width">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell us more about your needs..." required></textarea>
+                            <textarea id="message" name="message" placeholder="Tell us more about your needs..."
+                                required></textarea>
                         </div>
 
                         <div class="form-group full-width">
@@ -918,48 +953,46 @@
             <div class="map-section">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d123060.45340056597!2d28.26608939293552!3d-15.450014385177491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x19408d70f781a521%3A0x7d851ea88dbc276b!2sABM%20Construction%20Company%20Limited!3m2!1d-15.4500361!2d28.348466799999997!4m5!1s0x19408d70f781a521%3A0x7d851ea88dbc276b!2sStand%207629%2C%20off%20Mosi-o-tunya%20Rd%2C%20Lusaka!3m2!1d-15.4500361!2d28.348466799999997!5e0!3m2!1sen!2szm!4v1763836877825!5m2!1sen!2szm"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
     </section>
 
-<!-- Pop Up Modal title --------------------------------------------------------------------------------------->
-<div id="formModal" class="contact-modal">
-  <div class="contact-modal-content">
+    <!-- Pop Up Modal title --------------------------------------------------------------------------------------->
+    <div id="formModal" class="contact-modal">
+        <div class="contact-modal-content">
 
-    <span class="contact-close-button">&times;</span>
+            <span class="contact-close-button">&times;</span>
 
-    <div id="modalStages">
+            <div id="modalStages">
 
-      <!-- Loader Stage -->
-      <div id="loaderStage" class="contact-modal-stage">
-        <h2>Sending your message...</h2>
-        <div class="contact-loader"></div>
-      </div>
-      
-      <!-- Success Stage -->
-      <div id="successStage" class="contact-modal-stage">
-        <h2>Message Sent!</h2>
-        <p>Thank you for contacting us. We'll get back to you soon.</p>
-        <button class="contact-modal-button" id="closeSuccessButton">Close</button>
-      </div>
-      
-      <!-- Error Stage -->
-      <div id="errorStage" class="contact-modal-stage">
-        <h2>Something went wrong</h2>
-        <p>We couldn't send your message. Please try again.</p>
-        <button class="contact-modal-button" id="closeErrorButton">Close</button>
-      </div>
+                <!-- Loader Stage -->
+                <div id="loaderStage" class="contact-modal-stage">
+                    <h2>Sending your message...</h2>
+                    <div class="contact-loader"></div>
+                </div>
 
+                <!-- Success Stage -->
+                <div id="successStage" class="contact-modal-stage">
+                    <h2>Message Sent!</h2>
+                    <p>Thank you for contacting us. We'll get back to you soon.</p>
+                    <button class="contact-modal-button" id="closeSuccessButton">Close</button>
+                </div>
+
+                <!-- Error Stage -->
+                <div id="errorStage" class="contact-modal-stage">
+                    <h2>Something went wrong</h2>
+                    <p>We couldn't send your message. Please try again.</p>
+                    <button class="contact-modal-button" id="closeErrorButton">Close</button>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-<!-- Footer ----------------------------------------------------------------------------------------------->
-<footer class="euler-footer">
+    <!-- Footer ----------------------------------------------------------------------------------------------->
+    <footer class="euler-footer">
         <div class="euler-footer-container">
             <div class="euler-footer-content">
                 <!-- Company Info Section -->
@@ -968,10 +1001,11 @@
                         <img src="logo.png" alt="A.B.M Construction Ltd Logo">
                     </a>
                     <div class="euler-footer-description">
-                        Providing innovative and sustainable construction solutions with integrity, aiming to be Zambia’s most trusted partner while exceeding client expectations. 
+                        Providing innovative and sustainable construction solutions with integrity, aiming to be
+                        Zambia’s most trusted partner while exceeding client expectations.
                     </div>
                     <div class="euler-footer-social-links">
-                        <a href="https://web.facebook.com/abmconltd" target="_blank aria-label="Facebook">
+                        <a href="https://web.facebook.com/abmconltd" target="_blank aria-label=" Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </div>
@@ -1025,6 +1059,12 @@
                             <div class="euler-footer-time">CLOSED</div>
                         </div>
                     </div>
+                    <div class="euler-footer-profile-btn">
+                        <a href="https://drive.google.com/file/d/1_iB2wU85MWQL5B0G2nTpZBPctgkGi9Wc/view?usp=sharing"
+                            target="_blank">
+                            <i class="fas fa-file-alt"></i>View Company Profile
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -1039,7 +1079,7 @@
             const nav = document.getElementById('nav');
             const menuToggle = document.querySelector('.menu-toggle');
             nav.classList.toggle('active');
-            
+
             const icon = menuToggle.querySelector('i');
             if (nav.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -1054,112 +1094,112 @@
             const nav = document.getElementById('nav');
             const menuToggle = document.querySelector('.menu-toggle');
             nav.classList.remove('active');
-            
+
             const icon = menuToggle.querySelector('i');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         }
 
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const nav = document.getElementById('nav');
             const menuToggle = document.querySelector('.menu-toggle');
-            
-            if (nav.classList.contains('active') && 
-                !nav.contains(event.target) && 
+
+            if (nav.classList.contains('active') &&
+                !nav.contains(event.target) &&
                 !menuToggle.contains(event.target)) {
                 closeMenu();
             }
         });
 
-/*============================== Contact Form | Form Submission Logic =====================================*/
-document.getElementById('contactForm').addEventListener('submit', async function (event) {
-  event.preventDefault(); // Prevent default form submission
+        /*============================== Contact Form | Form Submission Logic =====================================*/
+        document.getElementById('contactForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission
 
-  // Show modal and loader
-  const modal = document.getElementById('formModal');
-  const loaderStage = document.getElementById('loaderStage');
-  const successStage = document.getElementById('successStage');
-  const errorStage = document.getElementById('errorStage');
-  
-  // Reset modal
-  loaderStage.style.display = 'block';
-  successStage.style.display = 'none';
-  errorStage.style.display = 'none';
-  
-  // Show modal
-  modal.style.display = 'flex';
+            // Show modal and loader
+            const modal = document.getElementById('formModal');
+            const loaderStage = document.getElementById('loaderStage');
+            const successStage = document.getElementById('successStage');
+            const errorStage = document.getElementById('errorStage');
 
-  const formData = new FormData(this);
-  
-  // Add Web3Forms access key and custom subject
-  formData.append('access_key', '27c9ac24-752b-4690-998a-76d519311adb'); // Replace with your actual key
-  formData.append('subject', `New Contact: ${formData.get('subject')}`);
-  formData.append('from_name', 'A.B.M Website Form');
-  
-  const formObject = Object.fromEntries(formData.entries());
+            // Reset modal
+            loaderStage.style.display = 'block';
+            successStage.style.display = 'none';
+            errorStage.style.display = 'none';
 
-  try {
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(formObject),
-    });
+            // Show modal
+            modal.style.display = 'flex';
 
-    const result = await response.json();
-    
-    // Hide loader
-    loaderStage.style.display = 'none';
-    
-    if (result.success) {
-      // Show success message
-      successStage.style.display = 'block';
-      this.reset(); // Clear the form
-    } else {
-      // Show error message
-      errorStage.style.display = 'block';
-      console.error('Form submission error:', result.message);
-    }
-  } catch (error) {
-    console.error('Network error:', error);
-    // Hide loader and show error
-    loaderStage.style.display = 'none';
-    errorStage.style.display = 'block';
-  }
-});
+            const formData = new FormData(this);
 
-// Close modal when clicking the X
-document.querySelector('.contact-close-button').addEventListener('click', function() {
-  document.getElementById('formModal').style.display = 'none';
-});
+            // Add Web3Forms access key and custom subject
+            formData.append('access_key', '27c9ac24-752b-4690-998a-76d519311adb'); // Replace with your actual key
+            formData.append('subject', `New Contact: ${formData.get('subject')}`);
+            formData.append('from_name', 'A.B.M Website Form');
 
-// Close modal when clicking the success button
-document.getElementById('closeSuccessButton').addEventListener('click', function() {
-  document.getElementById('formModal').style.display = 'none';
-});
+            const formObject = Object.fromEntries(formData.entries());
 
-// Close modal when clicking the error button
-document.getElementById('closeErrorButton').addEventListener('click', function() {
-  document.getElementById('formModal').style.display = 'none';
-});
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formObject),
+                });
 
-// Close modal when clicking outside the modal content
-window.addEventListener('click', function(event) {
-  const modal = document.getElementById('formModal');
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-});
+                const result = await response.json();
+
+                // Hide loader
+                loaderStage.style.display = 'none';
+
+                if (result.success) {
+                    // Show success message
+                    successStage.style.display = 'block';
+                    this.reset(); // Clear the form
+                } else {
+                    // Show error message
+                    errorStage.style.display = 'block';
+                    console.error('Form submission error:', result.message);
+                }
+            } catch (error) {
+                console.error('Network error:', error);
+                // Hide loader and show error
+                loaderStage.style.display = 'none';
+                errorStage.style.display = 'block';
+            }
+        });
+
+        // Close modal when clicking the X
+        document.querySelector('.contact-close-button').addEventListener('click', function () {
+            document.getElementById('formModal').style.display = 'none';
+        });
+
+        // Close modal when clicking the success button
+        document.getElementById('closeSuccessButton').addEventListener('click', function () {
+            document.getElementById('formModal').style.display = 'none';
+        });
+
+        // Close modal when clicking the error button
+        document.getElementById('closeErrorButton').addEventListener('click', function () {
+            document.getElementById('formModal').style.display = 'none';
+        });
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('formModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
     </script>
 </body>
 <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
 <script>
-    var wa_btnSetting = {"btnColor":"#16BE45","ctaText":"","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"260773519652","zIndex":999999,"btnColorScheme":"light"};
+    var wa_btnSetting = { "btnColor": "#16BE45", "ctaText": "", "cornerRadius": 40, "marginBottom": 20, "marginLeft": 20, "marginRight": 20, "btnPosition": "right", "whatsAppNumber": "260773519652", "zIndex": 999999, "btnColorScheme": "light" };
     window.onload = () => {
-    _waEmbed(wa_btnSetting);
+        _waEmbed(wa_btnSetting);
     };
 </script>
-      
+
 </html>
