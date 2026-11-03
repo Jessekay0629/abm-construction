@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abmconltd.com/sitemap.xml
